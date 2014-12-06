@@ -1,0 +1,20 @@
+
+
+So we're using Maven and spring boot.  They're both really awesome, but they have to be installed.
+
+Make sure that you can run the mvn command on the command line (That means maven is installed).  Here are some instructions:
+http://maven.apache.org/download.cgi#Installation
+
+Here's a video on how Maven works:
+http://tv.launchcode.us/#/videos/java_maven?lesson=Java
+
+Then make sure that you have this custom jar installed locally.  Run this command.  (You may have to change the slashes for Windows).
+mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file  -Dfile=lib/signalr-client-sdk-1.0.jar -DgroupId=microsoft.aspnet.signalr.client -DartifactId=signalr-client -Dversion=1.0 -Dpackaging=jar
+
+Here are the instructions for installing spring boot:
+http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli
+(The files that you need to install are in the included in this repository)
+
+Run the following command to try out Spring boot (it launches a webserver with a simple Hello World controller)
+spring run src/com/globalhack/TryOutSpringBootController.java
+

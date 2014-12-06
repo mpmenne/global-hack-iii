@@ -1,4 +1,4 @@
-package com.globalhack;
+package com.globalhack.util;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

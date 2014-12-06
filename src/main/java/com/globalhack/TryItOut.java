@@ -1,23 +1,17 @@
 package com.globalhack;
-import java.util.Scanner;
-
-import com.google.gson.stream.JsonToken;
-import microsoft.aspnet.signalr.client.Action;
-import microsoft.aspnet.signalr.client.ErrorCallback;
-import microsoft.aspnet.signalr.client.LogLevel;
-import microsoft.aspnet.signalr.client.Logger;
-import microsoft.aspnet.signalr.client.MessageReceivedHandler;
+import com.globalhack.util.SuperFunHttpRequest;
+import com.google.gson.JsonElement;
+import microsoft.aspnet.signalr.client.*;
 import microsoft.aspnet.signalr.client.http.CookieCredentials;
 import microsoft.aspnet.signalr.client.hubs.HubConnection;
 import microsoft.aspnet.signalr.client.hubs.HubProxy;
-
-import com.google.gson.JsonElement;
-import microsoft.aspnet.signalr.client.hubs.SubscriptionHandler;
 import microsoft.aspnet.signalr.client.hubs.SubscriptionHandler2;
 
-public class Main {
+import java.util.Scanner;
 
-    public static void main(String[] args) {
+public class TryItOut {
+
+    public static void not_main() {
 
         // Create a new console logger
         Logger logger = new Logger() {
