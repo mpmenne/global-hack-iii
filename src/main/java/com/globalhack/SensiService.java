@@ -50,6 +50,7 @@ public class SensiService {
         this.sensiState.setHeatSetPoint(0.0);
         this.sensiState.setOperatingMode("Not Connected");
         this.sensiState.setAway(false);
+        this.sensiState.setOperatingSince("00:00:00");
 
         this.setIcd("36-6f-92-ff-fe-01-3a-1b");
 
@@ -203,7 +204,17 @@ public class SensiService {
     private void storeOperatingSince(JsonObject jsonObject) {
         try {
             sensiState.setOperatingSince(jsonObject.get("OperationalStatus").getAsJsonObject().get("Running").getAsJsonObject().get("Time").toString().replace("\"", ""));
+
+
         } catch (NullPointerException e) {
+            try {
+                String mode = jsonObject.get("OperationalStatus").getAsJsonObject().get("Running").getAsJsonObject().get("Mode").toString().replace("\"", "");
+                if (mode.equals("Off")) {
+                    sensiState.setOperatingSince("00:00:00");
+                }
+            } catch (NullPointerException ee) {
+                System.out.println("Empty Update Value");
+            }
             System.out.println("Empty Update Value");
         }
     }
