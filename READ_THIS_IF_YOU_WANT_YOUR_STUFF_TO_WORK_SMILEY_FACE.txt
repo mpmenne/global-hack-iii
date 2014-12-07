@@ -16,5 +16,6 @@ http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-sta
 (The files that you need to install are in the included in this repository)
 
 Run the following command to try out Spring boot (it launches a webserver with a simple Hello World controller)
-spring run src/com/globalhack/TryOutSpringBootController.java
+Build it  mvn clean install
+Just run it by hitting play in IDEA
 

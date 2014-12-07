@@ -10,7 +10,8 @@ package com.globalhack;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface ExampleRepository extends MongoRepository<Phone, String> {
+public interface PhoneRepository extends MongoRepository<Phone, String> {
 
 
+    String findByPhoneNumber(String phoneNumber);
 }
