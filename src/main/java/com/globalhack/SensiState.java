@@ -45,8 +45,16 @@ public class SensiState {
     }
 
     public void setHeatSetPoint(Double heatSetPoint) {
-        this.heatSetPoint = heatSetPoint;
-        this.away = false;
+
+        try {
+            if (!this.heatSetPoint.equals(heatSetPoint)) {
+                this.heatSetPoint = heatSetPoint;
+                this.away = false;
+            }
+        } catch (NullPointerException e) {
+            this.heatSetPoint = heatSetPoint;
+            System.out.println("Setting for the first time.");
+        }
     }
 
     public Double getCoolSetPoint() {
@@ -54,8 +62,15 @@ public class SensiState {
     }
 
     public void setCoolSetPoint(Double coolSetPoint) {
-        this.coolSetPoint = coolSetPoint;
-        this.away = false;
+        try {
+            if (!this.coolSetPoint.equals(coolSetPoint)) {
+                this.coolSetPoint = coolSetPoint;
+                this.away = false;
+            }
+        } catch (NullPointerException e) {
+            this.coolSetPoint = coolSetPoint;
+            System.out.println("Setting for the first time.");
+        }
     }
 
     public String getOperatingMode() {

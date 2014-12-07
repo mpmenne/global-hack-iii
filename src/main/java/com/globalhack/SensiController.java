@@ -91,7 +91,7 @@ public class SensiController {
                 sensiService.setHeat(newTemperature.intValue());
             }
             else {
-                Double  newTemperature = sensiService.sensiState.getCoolSetPoint() + 6.0;
+                Double newTemperature = sensiService.sensiState.getCoolSetPoint() + 6.0;
                 sensiService.setCool(newTemperature.intValue());
             }
         }
