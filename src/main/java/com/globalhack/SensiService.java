@@ -179,6 +179,9 @@ public class SensiService {
                 // Store Operating Mode
                 storeOperatingMode(jsonObject);
 
+                // Store Operating Since
+                storeOperatingSince(jsonObject);
+
                 System.out.println(String.format("IcdString: %s, Model: %s", o.toString(), o2.toString()));
 
             }
@@ -192,6 +195,14 @@ public class SensiService {
     private void storeOperatingMode(JsonObject jsonObject) {
         try {
             sensiState.setOperatingMode(jsonObject.get("OperationalStatus").getAsJsonObject().get("OperatingMode").toString().replace("\"", ""));
+        } catch (NullPointerException e) {
+            System.out.println("Empty Update Value");
+        }
+    }
+
+    private void storeOperatingSince(JsonObject jsonObject) {
+        try {
+            sensiState.setOperatingSince(jsonObject.get("OperationalStatus").getAsJsonObject().get("Running").getAsJsonObject().get("Time").toString().replace("\"", ""));
         } catch (NullPointerException e) {
             System.out.println("Empty Update Value");
         }

@@ -49,6 +49,11 @@ public class SensiController {
         }
     }
 
+    @RequestMapping(value="/duration", method = RequestMethod.GET)
+    public String getDuration() throws InterruptedException, ExecutionException {
+        return sensiService.sensiState.getOperatingSince();
+    }
+
     @RequestMapping(value="/mode", method = RequestMethod.GET)
     public String getMode() throws InterruptedException, ExecutionException {
         return sensiService.sensiState.getOperatingMode();

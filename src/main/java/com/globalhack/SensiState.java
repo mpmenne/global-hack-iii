@@ -11,6 +11,15 @@ public class SensiState {
     private Double coolSetPoint;
     private String operatingMode;
     private Boolean away;
+    private String operatingSince;
+
+    public String getOperatingSince() {
+        return operatingSince;
+    }
+
+    public void setOperatingSince(String operatingSince) {
+        this.operatingSince = operatingSince;
+    }
 
     public Boolean getAway() {
         return away;
