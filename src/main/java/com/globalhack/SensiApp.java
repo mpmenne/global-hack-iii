@@ -18,7 +18,8 @@ import org.springframework.context.annotation.ComponentScan;
 public class SensiApp {
 
     public static void main(String[] varArgs) {
-        SpringApplication.run(SensiApp.class, varArgs);
+        SpringApplication application = new SpringApplication(SensiApp.class);
+        application.run();
     }
 
 }
