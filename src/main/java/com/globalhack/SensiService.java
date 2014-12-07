@@ -186,6 +186,7 @@ public class SensiService {
 
         };
         proxy.on("update", (SubscriptionHandler2<Object, JsonElement>) handler, Object.class, JsonElement.class);
+        proxy.on("online", (SubscriptionHandler2<Object, JsonElement>) handler, Object.class, JsonElement.class);
     }
 
     private void storeOperatingMode(JsonObject jsonObject) {
